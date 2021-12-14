@@ -214,7 +214,7 @@ class CoverallReporter:
 
         results = {
             'name': posix_filename,
-            'source_digest': hashlib.md5(source).hexdigest(),
+            'source_digest': hashlib.md5(source.encode('utf-8')).hexdigest(),
             'coverage': coverage_lines,
         }
 
