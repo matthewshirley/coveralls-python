@@ -1,5 +1,6 @@
 import logging
 import os
+import hashlib
 
 from coverage import __version__
 
@@ -213,7 +214,7 @@ class CoverallReporter:
 
         results = {
             'name': posix_filename,
-            'source': source,
+            'source_digest': hashlib.md5(source).hexdigest(),
             'coverage': coverage_lines,
         }
 
